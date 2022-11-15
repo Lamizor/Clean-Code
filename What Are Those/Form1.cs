@@ -15,52 +15,52 @@ namespace What_Are_Those
         ((Fenetre.Height - ComposantAPlacer.Height) / 2));
     }
     public static void PlacerComposantSurFenetre
-      (Control ComposantAPlacer, Control Fenetre, byte position)
+      (Control ComposantAPlacer, Control Fenetre, Positions position)
     {
       int xPos = -10, yPos = -20;
       switch(position)
       {
-        case 0://HautGauche
+        case Positions.HautGauche://HautGauche
           xPos = 0;
           yPos = 0;
           break;
 
-        case 1://HautCentre
+        case Positions.HautCentre://HautCentre
           xPos = -10 + ((Fenetre.Width - ComposantAPlacer.Width) / 2);
           yPos = 0;
           break;
 
-        case 2://HautDroite
+        case Positions.HautDroit://HautDroite
           xPos = -20 + (Fenetre.Width - ComposantAPlacer.Width);
           yPos = 0;
           break;
 
-        case 3://MilieuGauche
+        case Positions.MilieuGauche://MilieuGauche
           xPos = 0;
           yPos = -20 + ((Fenetre.Height - ComposantAPlacer.Height) / 2);
           break;
 
-        case 4://MilieuCentre
+        case Positions.MilieuCentre://MilieuCentre
           xPos = -10 + ((Fenetre.Width - ComposantAPlacer.Width) / 2);
           yPos = -20 + ((Fenetre.Height - ComposantAPlacer.Height) / 2);
           break;
 
-        case 5://MilieuDroite
+        case Positions.MilieuDroit://MilieuDroite
           xPos = -20 + Fenetre.Width - ComposantAPlacer.Width;
           yPos = -20 + ((Fenetre.Height - ComposantAPlacer.Height) / 2);
           break;
 
-        case 6://BasGauche
+        case Positions.BasGauche://BasGauche
           xPos = 0;
           yPos = -40 + (Fenetre.Height - ComposantAPlacer.Height);
           break;
 
-        case 7://BasCentre
+        case Positions.BasCentre://BasCentre
           xPos = -10 + ((Fenetre.Width - ComposantAPlacer.Width) / 2);
           yPos = -40 + (Fenetre.Height - ComposantAPlacer.Height);
           break;
 
-        case 8://BasDroite
+        case Positions.BasDroit://BasDroite
           xPos = -20 + (Fenetre.Width - ComposantAPlacer.Width);
           yPos = -40 + (Fenetre.Height - ComposantAPlacer.Height);
           break;
@@ -70,8 +70,18 @@ namespace What_Are_Those
 
     private void cbACentrer_SelectedIndexChanged(object sender, EventArgs e)
     {
-      PlacerComposantSurFenetre(cbACentrer, this, byte.Parse(cbACentrer.SelectedItem.ToString()));
+      PlacerComposantSurFenetre(
+        cbACentrer,
+        this,
+        (Positions)byte.Parse(cbACentrer.SelectedItem.ToString()));
       cbACentrer.SelectedItem.ToString();
+    }
+
+    public enum Positions : byte
+    {
+      HautGauche, HautCentre, HautDroit,
+      MilieuGauche, MilieuCentre, MilieuDroit,
+      BasGauche, BasCentre, BasDroit
     }
   }
 }
