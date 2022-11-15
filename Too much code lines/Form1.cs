@@ -10,14 +10,19 @@ namespace Too_much_code_lines
 
     private void Form1_Load(object sender, EventArgs e)
     {
-      fausseBD = new List<Personne>();
-      fausseBD.Add(
-        new Personne("Largo", "Winch", 26));
-      fausseBD.Add(
-        new Personne("Simon", "Ovronnaz", 26));
-      fausseBD.Add(new Personne("Dracula", "Alucard", 666));
+      CreationFausseBD();
       foreach(Personne person in fausseBD)
-        lbPersonne.Items.Add(person.Nom + " " + person.Prenom + " (" + person.Age + " ans)");
+        AjoutPersonneDansListBox(person);
+      MajAgeMoyen();
+    }
+
+    private void AjoutPersonneDansListBox(Personne person)
+    {
+      lbPersonne.Items.Add(person.Nom + " " + person.Prenom + " (" + person.Age + " ans)");
+    }
+
+    private void MajAgeMoyen()
+    {
       int AgeMoy = 0;
       foreach(var item in fausseBD)
       {
@@ -27,18 +32,22 @@ namespace Too_much_code_lines
       tbAgeMoy.Text = AgeMoy.ToString();
     }
 
+    private void CreationFausseBD()
+    {
+      fausseBD = new List<Personne>();
+      fausseBD.Add(
+        new Personne("Largo", "Winch", 26));
+      fausseBD.Add(
+        new Personne("Simon", "Ovronnaz", 26));
+      fausseBD.Add(new Personne("Dracula", "Alucard", 666));
+    }
+
     private void bAjouter_Click(object sender, EventArgs e)
     {
       Personne NouvPers = new Personne(tbNom.Text, tbPrenom.Text, int.Parse(tbAge.Text));
       fausseBD.Add(NouvPers);
-      lbPersonne.Items.Add(NouvPers.Nom + " " + NouvPers.Prenom + " (" + NouvPers.Age + ")");
-      int AgeMoy = 0;
-      foreach(var item in fausseBD)
-      {
-        AgeMoy += item.Age;
-      }
-      AgeMoy /= fausseBD.Count;
-      tbAgeMoy.Text = AgeMoy.ToString();
+      AjoutPersonneDansListBox(NouvPers);
+      MajAgeMoyen();
     }
   }
 
