@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Too much Parameters", "Too much Parameters\Too much Parameters.csproj", "{BAD0F0BD-8B29-4DB9-904F-E08DF4CF7D80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Too much Parameters", "Too much Parameters\Too much Parameters.csproj", "{BAD0F0BD-8B29-4DB9-904F-E08DF4CF7D80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "What Are Those Numbers", "What Are Those\What Are Those Numbers.csproj", "{A26D6418-41FD-48C7-9D65-B23D5209B8DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Too much lines of code", "Too much code lines\Too much lines of code.csproj", "{F97D39D1-0FC3-41DB-990A-304DA7F697D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{BAD0F0BD-8B29-4DB9-904F-E08DF4CF7D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAD0F0BD-8B29-4DB9-904F-E08DF4CF7D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAD0F0BD-8B29-4DB9-904F-E08DF4CF7D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26D6418-41FD-48C7-9D65-B23D5209B8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26D6418-41FD-48C7-9D65-B23D5209B8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26D6418-41FD-48C7-9D65-B23D5209B8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26D6418-41FD-48C7-9D65-B23D5209B8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97D39D1-0FC3-41DB-990A-304DA7F697D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97D39D1-0FC3-41DB-990A-304DA7F697D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97D39D1-0FC3-41DB-990A-304DA7F697D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97D39D1-0FC3-41DB-990A-304DA7F697D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
